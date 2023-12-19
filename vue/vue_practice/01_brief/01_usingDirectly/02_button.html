@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+<body>
+    <div id="myButton"></div>
+    <script>
+        //需求：创建一个按钮，可以显示按了该按钮多少次
+        const Root={
+            data(){
+                return {
+                    count:0
+                }
+            },
+            //用vue绑定：如下 @click='',在这里属性不需要{{}}
+            template:"<button @click='count=count+1'>点我一下</button>-点了{{count}}次"
+        }
+        
+        
+
+        Vue.createApp(Root).mount("#myButton")
+    </script>
+</body>
+</html>

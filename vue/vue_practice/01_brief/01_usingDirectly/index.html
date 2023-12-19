@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        //1.创建一个根组件，就是最外层的，作用类似像html标签
+        //在vue3中，组件就是一个js对象,如下
+        //组件用来创建组件实例，所以用大写，构造函数
+        //组件 --> 组件生成组件实例 -->生成虚拟DOM，操作虚拟DOM
+        const Root = {
+            //做配置
+            data(){
+                return {
+                    message:"happy 2023"//data返回对象的属性，例如这个message，会自动添加到组件实例中
+                    //Root叫组件，根据Root创建出来的就是组件实例，就是vm
+                }
+            }, //data是一个函数，需要对象作为返回值
+            
+            //接上面data的内容，在模板中可以直接访问组件实例的属性
+            //在模板中，要表示变量的时候，用{{}}来包裹
+            template: "<h1>我爱vue,{{message}}</h1>"  //希望组件在页面中呈现的样子
+        }
+
+        //2.创建app实例
+        //const root = Vue.createApp(Root)
+
+        //3.把实例挂在到页面上去
+        //用组件mount方法去挂载到指定div里
+        //如下，就是把Root根节点挂在到了id为root的div中
+        //root.mount("#root")
+
+
+        //上面2，3分开写太麻烦了，可以用链式调用化作一句
+        Vue.createApp(Root).mount("#root")
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+TS部分
+localstorage的笔记：
+1.在tsconfig的配置文件找不到输入输出，这个报错的意思是，没有找到ts文件，新建一个就好
+2.Q:动态索引：中括号的东西一直有点不懂
+  A:
+3.赋值的时候一定要有等号
+  Q:Ts中，冒号等号const的使用
+
+4.localStorage.getItem方法拿到的数据是JSON格式的，自己用JSON.Parse转一下
+5.但凡没有找到泛型T，一定要注意方法的开头有没有传入T
+
+6.ts,js里return的大括号不能换行！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！wtf！！！
+
+7.Q:我遇到了rollup-c命令无效的问题，怎么解决的？
+  A:重新使用npm init -y生成了package.json文件生成的
+
+
+vue部分：
+8.Q:vue not defined错误
+A：忘记引vue了
+
+9.tips:对象实例里不需要声明，只需要直接赋值
+
+10.tips:template记得是在组件里的

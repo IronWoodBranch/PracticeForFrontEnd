@@ -1,0 +1,27 @@
+12/19 day1
+把json变成页面：以前的方式：用dom，把json整到页面里，操作麻烦，性能低下，现在抛弃原生dom
+rest服务器：负责提供model，模型
+浏览器：负责提供views
+把model镶嵌到views的东西叫view-model，view model负责连接视图和数据，数据发生变化，view就变化
+这就是mvvm架构 model view view model
+传统的view model实现方式：没有，原生DOM
+JS框架主要解决的问题：使用DOM渲染页面的时候，麻烦性能低；vue react angular都是替换DOM的
+
+vue的官方文档介绍：渐进式声明式组件化编程模型；
+声明式：对应命令式，面向过程
+组件化：把网页更加细分，拆分成很多不同部分，好处：组装式编程，提高复用性，最小单位不再是网页
+渐进式：可大可小
+
+vue主要功能：替换掉dom，不再需要原生dom操作，mvvm操作模式，vue负责vm(view model，视图模型)的工作
+关联视图和模型，当模型变化时，视图会自动更新，当视图去操作模型（双向绑定）
+view的特点：1.组件化开发，2.声明式编程
+
+一切皆组件
+根组件和其他组件：
+写代码的时候需要先创建根组件
+
+在vue3中，组件就是一个js对象（惊）
+大写字母开头表示构造函数，组件正好对应组件实例
+D:\TsCode\PracticeForFrontEnd\vue\vue_practice\01_brief\01_usingDirectly笔记看这
+
+组件是用来创建组件实例的，也就是vm，不直接用组件是为了复用，组件实例之间不会互相干扰
