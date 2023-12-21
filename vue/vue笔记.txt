@@ -25,3 +25,10 @@ view的特点：1.组件化开发，2.声明式编程
 D:\TsCode\PracticeForFrontEnd\vue\vue_practice\01_brief\01_usingDirectly笔记看这
 
 组件是用来创建组件实例的，也就是vm，不直接用组件是为了复用，组件实例之间不会互相干扰
+
+template会覆盖原生网页
+component：里面放子组件的名字
+template原理：项目运行的时候，模板会被转换成函数，然后被运行，所以在模板中写h5，性能更差
+单文件组件就是为了解决template的种种不便产生的解决方案：App.vue
+
+window.vm=vm   这是全局变量
