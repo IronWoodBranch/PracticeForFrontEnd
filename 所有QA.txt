@@ -27,3 +27,13 @@ A：忘记引vue了
 A：忘记引用ref了，而且from'vue'这里该用双引号
 
 12.Q:click和onclick的区别
+
+13.Q：用yarn新建项目后，第一步是干什么
+A：package json "dev" 加上 --open,这个指令会在运行项目的时候自动打开浏览器\
+  然后yarn一下，会自动安装缺失的依赖
+
+14.Q:package.json是干什么的？
+A:配置中心
+
+15.P27练习1 19：44秒 ：在vue中的概念不太清楚，后面回来补
+A: ：是v-bind的简写

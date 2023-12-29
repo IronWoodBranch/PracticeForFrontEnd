@@ -159,3 +159,131 @@ p25 style-module
 1.加了之后，会对模块中的类名哈希化，使用方法  ：$style
 2.使用方法2，module指定类名，然后div:class ="module类名.div名"来使用
 
+
+Demo笔记
+1.如何让两个div并排
+    1.css当前类或者父类中设置display:flex,然后flex：auto
+    2.display：inline-block
+    用了2的话，需要自己手动去调整长宽，可能1更好
+2.父类的样式应该要把子类覆盖
+    overflow:hidden
+3.对于切换类的东西，应该单独做一个样式出来,然后把这个样式加到对应的标签类后面
+
+4.cursor变手,hover指定指上去的动作，带有一个not的方法
+
+5.用vue来指定式样的变化:v-bind加个变量来控制，每个div都只有那个变量为x的时候能够绑定，那个x
+就决定了状态，状态机模式
+
+6.一定要注意空格的使用，在前端非常严格 :前有后无
+
+7.记得设置组合式，不然的话，必须return出去才能用
+
+8.:表示v-bind，里面绑类的时候有个参数active，自带的，指定0,1决定是否启用
+
+9.想要简单完成click功能，改变值之类的，可以不写成函数，直接写到button里面去
+
+10.transition:渐变
+
+11.v-show = "布尔表达式"，决定这块会不会被显示
+    v-show本质是display ：none，css内容
+
+P29 props
+为了避免数据和视图耦合，用props给子组件传值
+
+使用props
+    -先在子组件中定义 defineProps
+    -然后可以在父组件的标签里直接传值 <组件名:"属性名":"属性值">
+
+P32 v-if
+1.它和v-show的区别
+    v-show
+    （切换性能高）v-show是纯CSS，不涉及组件的重新渲染
+     初始化性能低，因为全部要加载
+    v-if
+    （切换反复渲染组件，性能差）v-if会直接将元素删除
+    初始化性能高，删除的元素不会初始化
+    可以和v-else/v-else-if使用
+    可以配合<template>使用，变为幽灵标签
+
+
+P33 动态组件
+1.component：最终是什么标签由is属性决定
+    <component is="h1">xxx</component>，最终"xxx"就会以h1格式显示出来
+应用场景，可以用三元运算符达成组件切换
+
+P34 Photo组件
+css中用变量的方法：v-bind
+例如
+.xxx{
+    background-color:v-bind(colorParam)
+}
+
+P35 HotBar组件
+1.components组件最好按功能再分一下文件夹
+
+P36 V-for
+1.用法：加在标签里就行，in语法
+    eg.<li v-for="name in arrPara">{{ name }}</li>
+    就会生成若干个
+
+P37 网页渲染
+浏览器渲染网页的时候所做的事：
+    1.加载页面的html和css（源码）
+    2.html转化为DOM，CSS转化为CSSOM
+    3.将DOM和CSSOM转换为一颗渲染树
+    4.对渲染树进行reflow（计算元素位置）
+    5.绘制网页（flow），然后repaint（重绘）
+1.渲染树(Render tree)
+    它决定哪些元素需要在网页中展示
+    会从根元素开始检查哪些元素可见以及他们的样式
+    忽略不可见的元素(display:none之类的，不会进入到树),visibility:hidden会进入渲染树，它不是
+消失而是隐藏，会占位
+
+2.重排、回流
+    计算渲染树中元素的大小和位置
+    当元素大小和位置发生变化时，重排：长宽高font-size等
+    多次修改时，重排多性能差，解决方案
+        1.改class，后一次性add
+        2.先display改为none，然后改完再显示
+        用框架开发的时候不需要考虑重排，有虚拟dom，操作完成后框架会一次性提交给真是dom，需要避免
+    过多操作原生dom
+3.重绘
+    绘制页面
+    页面变化时，会发生重绘 
+P39 vfor细节
+使用v-for的时候，可以为元素指定唯一key避免数据错位
+
+P40 41 42 TabList组件
+该组件主要功能时切换多个选项卡
+主要显示内容是tablist
+    想让子组件直接访问父组件的数据
+    插槽(slot)
+    <slot></slot>标签会被组件的标签体所替换
+    插槽位于父组件作用域中，所以用的是父组件里的变量
+2.具名插槽
+    <div v-slot:xxx></div>
+    然后就会传给子组件里面叫xxx的插槽那里去
+    简写：<div #xxx></div>
+
+
+P45 事件
+    1.完整写法v-on:click/dbclick(单击，双击)
+        @是v-on的语法糖
+    2.绑定方式的两种方式
+        1.内联事件处理器
+            事件触发时，直接执行的js语句
+        2.方法事件处理器
+            事件触发时，vue调用函数
+    3.停止事件传播的方式：@click.stop
+P46 事件修饰符
+1.stop 停止传播
+
+2.capture 在捕获阶段触发事件
+
+P47 透传属性
+概念：在组件上设置属性，会自动传递给组件的根元素
+只透传给单根组件，多根不透传
+p48 透传补充
+    inheritAttrs:false 可以把自动透传设置为关闭
+
+
