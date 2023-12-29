@@ -22,3 +22,8 @@ A：忘记引vue了
 9.tips:对象实例里不需要声明，只需要直接赋值
 
 10.tips:template记得是在组件里的
+
+11.为什么ref没用上
+A：忘记引用ref了，而且from'vue'这里该用双引号
+
+12.Q:click和onclick的区别
