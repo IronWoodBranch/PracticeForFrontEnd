@@ -286,4 +286,16 @@ P47 透传属性
 p48 透传补充
     inheritAttrs:false 可以把自动透传设置为关闭
 
+P49 50 双向数据绑定和v-model
+v-model="text"等价于
+@input="(event) =>(text = event.target.value)":value:"text"一顿绑
+本质还是等于响应式赋值和v-bind,应该是语法糖
 
+input里面不同的标签需要的v-model不一样，例如checkbox给配的应该是bool，type="text"则随意
+    可以用true-value="xxx"来指定勾选与否的时候的值
+多选的时候用数组
+在<select>里的变量最好指定默认值，或者disable value属性
+
+v-model.lazy="xxx"这种写法更好，会等完全输完才变
+trim去空格，可以用链式表达式
+.number 把数据转换为数值
