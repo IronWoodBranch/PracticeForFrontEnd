@@ -1,0 +1,36 @@
+1.首先得给所有的样式配一个基础
+
+
+2.快速创建模板:v-base-3
+
+3.注册路由:单独的src里的文件夹router，里面有个index.ts类，里面因createRouter和createWebHashHistory
+    具体初始化看文件,里面决定每个路由用哪个组件
+
+4.安装各种依赖和saas
+
+
+5.开始给页面配色
+先把div分出来，然后在那个页面css里面画长宽高颜色，颜色可以从中国色里面去选
+
+6.scss里面，父类可以把子类css包起来
+
+7.想要让一个东西居中怎么写？
+display:flex,justify-content:center;align-itmes:center
+
+8.element ui plus 用法
+各自复制，然后去改绑定表单的对象，改完去改绑定表单的数据即可
+
+9.通过浏览器反向去找标签的class，找到后去css里面改样式
+
+10.必须用v-deep去改，不然无法覆盖element ui plus
+class前面加一个::v-deep 即可
+
+11.给表单加标题和居中
+在label上面加，然后text-align:center
+
+12.字体自己放进assets里面后，在style里面全局引入 
+
+13.验证在前端，写多个方法，后端的验证是提交按钮
+
+14.封装axios
+新建utils文件夹 

@@ -37,3 +37,15 @@ A:配置中心
 
 15.P27练习1 19：44秒 ：在vue中的概念不太清楚，后面回来补
 A: ：是v-bind的简写
+
+16.vite引入app错误的原因
+A:vite-env.d.ts中没有默认配置ts的声明，需要自己手动添加
+
+17.cannot use in for search for 'catch'  的原因
+A:路由index写错了，这次是因为没写import，下次可能是别的
+
+18.scss是什么
+A:css的升级版
+
+19.Q:为什么我一开始的渐变颜色没配上
+A:background-color和background搞混了
