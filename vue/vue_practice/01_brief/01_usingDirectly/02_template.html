@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+<body>
+    <div id="myButton"></div>
+    <script>
+        const Root={
+            data(){
+                return {
+                    count:0
+                }
+            },
+            //template的三种方式
+            //1.组件中指定，如下
+            template:"<button @click='count=count+1'>点我一下</button>-点了{{count}}次"
+            //2.直接在外面的div上写好（定义到网页中），最后挂上去，前提：符合html语法
+            //注意：html里的标签都是小写，但是vue中有大写的，所以这些东西放到html中而不是组件的时候，会出现一些问题
+            //一般代码不采用这种方式
+            //3.网页上也有，组件中也有，会优先组件，覆盖
+            //组件中如果没有template，也会优先去取根元素的innerHtml
+        }
+        
+        
+
+        Vue.createApp(Root).mount("#myButton")
+    </script>
+</body>
+</html>

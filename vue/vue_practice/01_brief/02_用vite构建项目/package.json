@@ -1,0 +1,17 @@
+{
+  "devDependencies": {
+    "vite": "^5.0.10"
+  },
+  "dependencies": {
+    "vue": "^3.3.13"
+  },
+  "name": "02_用vite构建项目",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "scripts",
+    "build": "vite build",
+    "preview": "vite preview"
+  }
+}

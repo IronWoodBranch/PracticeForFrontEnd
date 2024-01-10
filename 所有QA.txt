@@ -23,6 +23,8 @@ A：忘记引vue了
 
 10.tips:template记得是在组件里的
 
+11.tips:template在组件里，和data（）同一级别
+
 11.为什么ref没用上
 A：忘记引用ref了，而且from'vue'这里该用双引号
 
